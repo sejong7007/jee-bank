@@ -1,0 +1,20 @@
+package com.bank.web.services;
+import com.bank.web.domains.EmployeeBean;
+import com.bank.web.domains.CustomerBean;
+import com.bank.web.domains.MemberBean;
+
+	public interface MemberService {
+	
+		public void customerJoin(CustomerBean param);
+		public void employeeJoin(EmployeeBean param);
+		public CustomerBean[] findAllCustomers();
+		public EmployeeBean[] findAllEmployees();
+		public MemberBean[] findByName(String name);
+		public MemberBean findById(String id); 
+		boolean login(MemberBean param);
+		int countCustomers(); 
+		int countEmployees();
+		boolean existId(String id);
+		void updatePass(MemberBean param);
+		void deleteMember(MemberBean param);
+	}
