@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 public class FileTest {
@@ -26,7 +28,7 @@ public class FileTest {
 			File file = new File(FILE_PATH + "customers.txt");
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file,true));
 			BufferedReader reader = new BufferedReader(new FileReader(file));
-			StringBuffer buff = null;
+			List<String> list = new ArrayList<>();
 			String msg = "";
 			
 			while(true) {
@@ -41,15 +43,11 @@ public class FileTest {
 				writer.flush();
 				break;
 			case "2" : 
-				msg = "";
-				buff = new StringBuffer();
-				while((msg += reader.readLine()) != null) {
-					buff.append(reader.readLine()+"/\n");
+				while((msg = reader.readLine()) != null) {
+					list.add(msg+"/");
 				}
-				JOptionPane.showMessageDialog(null, buff);
+				JOptionPane.showMessageDialog(null, list);
 				reader.close();
-				break;
-			case "3" : 
 				break;
 				}
 			}
