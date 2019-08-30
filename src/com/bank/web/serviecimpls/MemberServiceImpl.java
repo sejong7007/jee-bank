@@ -1,5 +1,8 @@
 package com.bank.web.serviecimpls;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.bank.web.domains.CustomerBean;
 import com.bank.web.domains.EmployeeBean;
 import com.bank.web.domains.MemberBean;
@@ -7,46 +10,61 @@ import com.bank.web.services.MemberService;
 
 public class MemberServiceImpl implements MemberService {
 
+	private List<CustomerBean> customers;
+	private List<EmployeeBean> employees;
+	
+	public MemberServiceImpl() {
+		customers = new ArrayList<>();
+		employees = new ArrayList<>();
+	}
+	
 	@Override
 	public void customerJoin(CustomerBean param) {
-		// TODO Auto-generated method stub
+		customers.add(param);
 		
 	}
 
 	@Override
 	public void employeeJoin(EmployeeBean param) {
-		// TODO Auto-generated method stub
+		employees.add(param);
 		
 	}
 
 	@Override
-	public CustomerBean[] findAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<CustomerBean> findAllCustomers() {
+		return customers;
+		}
 
 	@Override
-	public EmployeeBean[] findAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<EmployeeBean> findAllEmployees() {
+		return employees;
 	}
 
 	@Override
 	public MemberBean[] findByName(String name) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public MemberBean findById(String id) {
-		// TODO Auto-generated method stub
+		MemberBean member = new MemberBean();
+		for(CustomerBean c : customers) {
+			if(id.equals(c.getId())) {
+				member =c ;
+				return member;				
+			}
+		}
+		for(EmployeeBean e : employees) {
+			
+		}
 		return null;
 	}
 
 	@Override
 	public boolean login(MemberBean param) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean flag = false;
+		return flag;
 	}
 
 	@Override

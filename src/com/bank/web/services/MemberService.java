@@ -1,5 +1,8 @@
 package com.bank.web.services;
 import com.bank.web.domains.EmployeeBean;
+
+import java.util.List;
+
 import com.bank.web.domains.CustomerBean;
 import com.bank.web.domains.MemberBean;
 
@@ -7,8 +10,8 @@ import com.bank.web.domains.MemberBean;
 	
 		public void customerJoin(CustomerBean param);
 		public void employeeJoin(EmployeeBean param);
-		public CustomerBean[] findAllCustomers();
-		public EmployeeBean[] findAllEmployees();
+		public List<CustomerBean> findAllCustomers();
+		public List<EmployeeBean> findAllEmployees();
 		public MemberBean[] findByName(String name);
 		public MemberBean findById(String id); 
 		boolean login(MemberBean param);

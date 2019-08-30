@@ -36,8 +36,8 @@ public class MemberBean implements Serializable{
 		return ssn;
 	}
 
-	public void setSsn(String sssn) {
-		this.ssn = sssn;
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
 	}
 
 	@Override

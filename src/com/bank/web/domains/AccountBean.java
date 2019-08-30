@@ -5,8 +5,7 @@ import java.io.Serializable;
 public class AccountBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String accountNum, today;
-	private int money;
+	private String accountNum, today, money;
 	public String getAccountNum() {
 		return accountNum;
 	}
@@ -19,10 +18,10 @@ public class AccountBean implements Serializable {
 	public void setToday(String today) {
 		this.today = today;
 	}
-	public int getMoney() {
+	public String getMoney() {
 		return money;
 	}
-	public void setMoney(int money) {
+	public void setMoney(String money) {
 		this.money = money;
 	}
 	@Override

@@ -7,16 +7,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/MemberController")
+import com.bank.web.domains.CustomerBean;
+
+@WebServlet("/member.do")
 public class MemberController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
-    public MemberController() {
-        super();
-    }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("맥락이 맞아서 여기에 도착함....6");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String ssn = request.getParameter("ssn");
+		String credit = request.getParameter("credit");
+		CustomerBean m = new CustomerBean();
+		m.setId(id);
+		m.setPw(pw);
+		m.setName(name);
+		m.setSsn(ssn);
+		m.setCredit(credit);
+		System.out.println(m);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
